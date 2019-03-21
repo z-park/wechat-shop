@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "mpvueTemplateProjectVersion": "0.1.0",
   "description": "A Mpvue project",
-  "author": "px <1914518568@qq.com>",
   "private": true,
   "scripts": {
     "dev:wx": "node build/dev-server.js wx",
@@ -25,6 +24,7 @@
   },
   "dependencies": {
     "mpvue": "^2.0.0",
+    "vue-awesome-swiper": "^3.1.3",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

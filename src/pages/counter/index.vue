@@ -1,44 +1,50 @@
 <template>
-  <div class="counter-warp">
-    <p>Vuex counter：{{ count }}</p>
-    <p>
-      <button @click="increment">+</button>
-      <button @click="decrement">-</button>
-    </p>
+  <div class="profile">
+    <header class="">
+      <div class="profile-info">
+        <img class="avator" src="" alt="">
+        <span class="username"></span>
+      </div>
+
+      <div class="order-block">
+        <div class="order-block-top">
+          <h6 class="name"></h6>
+          <a href="##">
+            查看所有
+            <i class="icon icon-right-arrow"></i>
+          </a>
+        </div>
+        <div class="action-group">
+          <a class="action">
+            <img class="" src="" alt="">
+            <span></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <!-- <div ></div> -->
+      <div class="panel">
+        <span>something</span>
+        <i class="icon-right"></i>
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
 // Use Vuex
-import store from './store'
 
 export default {
-  computed: {
-    count () {
-      return store.state.count
-    }
-  },
   methods: {
-    increment () {
-      store.commit('increment')
-    },
-    decrement () {
-      store.commit('decrement')
+    test () {
+      return false
     }
   }
 }
 </script>
 
+
 <style>
-.counter-warp {
-  text-align: center;
-  margin-top: 100px;
-}
-.home {
-  display: inline-block;
-  margin: 100px auto;
-  padding: 5px 10px;
-  color: blue;
-  border: 1px solid blue;
-}
 </style>

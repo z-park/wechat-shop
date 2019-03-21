@@ -1,126 +1,60 @@
 <template>
-  <div @click="clickHandle">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
-
-      <div class="userinfo-nickname">
-        <card :text="userInfo.nickName"></card>
-      </div>
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-        <card :text="motto"></card>
-      </div>
-    </div>
-
-    <form class="form-container">
-      <input type="text" class="form-control" :value="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model="motto" placeholder="v-model" />
-      <input type="text" class="form-control" v-model.lazy="motto" placeholder="v-model.lazy" />
-    </form>
-
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
-
-    <div class="all">
-        <div class="left">
+  <div class="home">
+    <header>
+      <div class="top">
+        <h1 class="c-page-title">主页</h1>
+        <div class="search">
+          <i class="icon icon-search"></i>
         </div>
-        <div class="right">
+      </div>
+      <!-- swiper -->
+    </header>
+  谭本聪3月20号日报：
+  调整小程序部分样式, 编写会员注册页的js。
+    <div class="tab">
+      <div class="tab-switch-group">
+        <div class="tap-switch"></div>
+      </div>
+      <!-- group end -->
+      <div class="tab-panel-group">
+        <div class="tab-panel">
+          <div class="product-list">
+            <div class="product-item">
+              <img class="product-picture" src="" alt="">
+              <h2 class="product-name"></h2>
+              <span class="product-price"></span>
+            </div>
+          </div>
+          <div class="showMore"></div>
         </div>
+      </div>
+      <!-- group end -->
     </div>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
+// Use Vuex
 
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
+      data: {
+        imgUrls: [''],
+        indicatorDots: false,
+        autoplay: false,
+        interval: 5000,
+        duration: 1000
       }
     }
   },
-
-  components: {
-    card
-  },
-
   methods: {
-    bindViewTap () {
-      const url = '../logs/main'
-      if (mpvuePlatform === 'wx') {
-        mpvue.switchTab({ url })
-      } else {
-        mpvue.navigateTo({ url })
-      }
-    },
-    clickHandle (ev) {
-      console.log('clickHandle:', ev)
-      // throw {message: 'custom test'}
+    test () {
+      return false
     }
-  },
-
-  created () {
-    // let app = getApp()
   }
 }
 </script>
 
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-.left{
-  float:left;
-  width:3rem;
-  height:1rem;
-  background-color:red;
-}
-
-.right{
-  float:left;
-  width:4.5rem;
-  height:1rem;
-  background-color:green;
-}
+<style>
 </style>
